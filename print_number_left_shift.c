@@ -11,16 +11,18 @@
 int print_number_left_shift(char *str, params_t *format_params)
 {
 	unsigned int total_printed_chars = 0, padding_count = 0;
+	unsigned int original_neg;
+	unsigned int is_negative;
 	char padding_char = ' ';
 
 	if (format_params->zero_flag && !format_params->minus_flag)
 		padding_char = '0';
 
-	int is_negative = (!format_params->unsign && *str == '-');
-	int original_neg = is_negative;
-
-	if (is_negative && _strlen(str) < format_params->width &&
-	padding_char == '0' && !format_params->minus_flag)
+	is_negative = (!format_params->unsign && *str == '-');
+	original_neg = is_negative;
+	
+	if (is_negative && (unsigned int)_strlen(str) < format_params->width &&
+	    padding_char == '0' && !format_params->minus_flag)
 		str++;
 	else
 		is_negative = 0;

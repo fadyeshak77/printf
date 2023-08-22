@@ -9,8 +9,9 @@
 int _puts(char *str)
 {
 	int printed_chars = 0;
+	char *current_char;
 
-	for (char *current_char = str; *current_char; current_char++)
+	for (current_char = str; *current_char; current_char++)
 	{
 		printed_chars += _putchar(*current_char);
 	}
