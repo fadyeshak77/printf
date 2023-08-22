@@ -106,6 +106,7 @@ int _strlen(char *str);
 /* Numeric Printing Helpers Functions*/
 int print_number(char *num_str, params_t *params);
 int print_number_right_shift(char *str, params_t *params);
+
 int print_number_left_shift(char *str, params_t *params);
 
-#endif
+#endif /* MAIN_H */
